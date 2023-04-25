@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffffcd;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 27%;
+}
+
+#log-google{
+    background-color: #fff;
+}
+
+#log-github {
+    background-color: black;
+    color: #fff;
+}
+
+#log-facebook {
+    background-color: rgb(91, 91, 236);
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 0 15px rgb(0 0 0 / 9%);
+    border-radius: 6px;
+    padding-bottom: 3rem;
+}
+
+a{
+    text-decoration: none;
+}
+input {
+    padding: 0.5rem;
+}
+
+button {
+    padding: 0.8rem;
+    border: none;
+    box-shadow: 0 0 10px rgb(0 0 0 / 9%);
+    cursor: pointer;
+}
+
+#in-senha {
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: center;
+}
+
+.borda {
+    border-radius: 5px;
+}
+
+#btn-login {
+    background-color: rgb(54, 157, 236);
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+#lbl-senha {
+    display: flex;
+    justify-content: space-between;
+}
+
+span {
+    cursor: pointer;
+}
