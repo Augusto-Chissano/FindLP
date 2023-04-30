@@ -1,32 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="Pt-r">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>DEMO: REGISTER</title>
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/register.js" defer></script>
+    <title>SIGN UP</title>
 </head>
 
 <body>
-    <div class="container-main">
-        <div class="container">
-            <button id="log-google" class="borda">Continue with Google</button>
-            <button id="log-github" class="borda">Continue with Github</button>
-            <button id="log-facebook" class="borda">Continue with Facebook</button>
-            <form action="http://localhost:3000/add" method="post" class="borda">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="in-email" class="borda">
-                <label for="senha" id="lbl-senha">Senha</label>
-                <input type="password" name="senha" id="in-senha" class="borda">
-                <label for="confirm" id="lbl-senha">Confirme</label>
-                <input type="password" name="confirm" id="in-senha" class="borda">
-                <button id="btn-login" type="submit">Criar Conta</button>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img/undraw_shopping_re_hdd9.svg" alt="">
+        </div>
+        <div class="form">
+            <form  id="form">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Criar Conta</h1>
+                    </div>
+                    <div class="login-botao">
+                        <button><a href="./login.html">SIGN IN</a></button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primeiro Nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Insira o primeiro nome" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="lastname">Apelido</label>
+                        <input id="lasttname" type="text" name="lastname" placeholder="Insira o seu Apelido" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Insira o seu e-mail" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">Telefone</label>
+                        <input id="number" type="text" name="number" placeholder="(+258) xxxxxxxxx" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="insira uma senha" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="confpassword">Confirmar Senha</label>
+                        <input id="confpassword" type="password" placeholder="Confirme sua senha"
+                            required>
+                    </div>
+                </div>
+                <div class="genero-inputs">
+                    <div class="genero-titulo">
+                        <h6>Género</h6>
+                    </div>
+                    <div class="genero-group">
+                        <div class="genero-input">
+                            <input type="radio" id="female" name="gender" value="Feminino">
+                            <label for="female">Feminino</label>
+                        </div>
+                        <div class="genero-input">
+                            <input type="radio" id="male" name="gender" value="Masculino">
+                            <label for="male">Masculino</label>
+                        </div>
+                        <div class="genero-input">
+                            <input type="radio" id="none" name="gender" value="Outro">
+                            <label for="none">Outro</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="continue-botton">
+                    <button id="criar-conta">Criar Conta</button>
+                </div>
             </form>
-            <p>Ja tem Conta? <a href="login.html" target="_self"><span style="color:  rgb(54, 157, 236);">Log-in</span></a></p>
         </div>
     </div>
+    <div class="card hide">
+        <h2>Cadastrado com sucesso!</h2>
+        <button class="btn">OK</button>
+      </div>      
 </body>
 
 </html>
