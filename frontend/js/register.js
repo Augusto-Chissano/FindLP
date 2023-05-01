@@ -8,6 +8,7 @@ const form = document.querySelector("#form");
 const btnCriarConta = document.querySelector("#criar-conta");
 const btnOk = document.querySelector(".btn");
 const card = document.querySelector(".card");
+const mensagem = document.getElementById("mensagem");
 const URL = "http://localhost:3333/user";
 
 class User {
@@ -20,7 +21,6 @@ class User {
         this.gender = gender;
     }
 }
-
 const addUser = async (user) => {
 
     const response = await fetch(URL, {
@@ -34,6 +34,7 @@ const addUser = async (user) => {
 
     if (data.email === user.email) {
         form.reset();
+        mensagem.innerHTML = `Bem-vindo(a), ${data.firstName}! O seu cadastro foi realizado com sucesso com o e-mail ${data.email}.`
         card.classList.toggle("hide");
     }
 }

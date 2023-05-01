@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+:root {
+    --color-white: hsl(252, 30%, 100%);
+    --color-light: hsl(252, 30%, 95%);
+    --color-gry: rgb(160, 151, 190);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-success: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, 17%);
+    --color-black: hsl(252, 30%, 10%);
+
+
+    --btn-padding: .6rem 2rem;
+    --border-radius: 0;
+    --card-border-radius: 0;
+    --search-padding: .6rem 2rem;
+    --card-padding: 1rem;
+
+    --stk-top-left: 5.4rem;
+    --stk-top-right: -18rem;
+}
+
+body {
+    background: #fff;
+}
+
+/*
+*
+*  Navbar styles
+*
+*/
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.search-box {
+    background: var(--color-light);
+    border-radius: 50px;
+    padding: var(--search-padding);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-box input[type="search"] {
+    width: 40vw;
+    margin-left: 1rem;
+    font-size: .9rem;
+    color: var(--color-dark);
+    background: transparent;
+
+}
+
+.logo {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+img {
+    height: 30px;
+}
+
+.profile-status {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 2rem;
+}
+
+.profile-status img {
+    cursor: pointer;
+}
+
+/*
+*
+*  Main styles
+*
+*/
+
+main {
+    position: relative;
+    top: 4.5rem;
+}
+
+
+.main-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.main-container .side-bar {
+    background-color: #fff;
+    padding: 10px;
+    position: sticky;
+    height: max-content;
+    top: 4.5rem;
+    overflow-y: scroll;
+    overflow: hidden;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+/*
+*
+*  Sidebar styles
+*
+*/
+
+
+.button-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.button-list li:hover {
+    transition: .10s;
+    background-color: #f2f2f2;
+    ;
+}
+
+.button-list li {
+    padding: 0.9rem;
+    border-radius: 7px;
+}
+
+.button-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    gap: 10px;
+}
+
+.button-list a i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.button-list a span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    margin-top: 0.6rem;
+}
+
+.perfil img {
+    height: 45px;
+}
+
+.publicar {
+    font-size: 18px;
+    padding: 1rem;
+    color: hsl(252, 75%, 60%);
+    border-radius: 7px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.publicar:hover {
+    opacity: 0.7;
+    transition: .10s;
+}
+
+.filtros h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.filtros li span {
+    color: blue;
+}
+
+.filtros li {
+    padding: 0.4rem;
+}
+
+/*
+*
+*  Post styles
+*
+*/
+
+.posts {
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    padding: 20px;
+    height: max-content;
+}
+
+.post {
+    display: flex;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 49%;
+    height: 55vh;
+    border-radius: 7px;
+    background-color: #fff;
+}
