@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Carregamento da biblioteca da google-->
     <link rel="stylesheet" href="./css/login.css">
     <script src="js/login.js" defer></script>
     <title>SIGN IN 2</title>
@@ -25,8 +26,13 @@
 
             <p>ou</p>
 
-            <button type="button" class="google-btn">
+            <button type="button" style="display: none;" class="google-btn">
                 <img id="google-icon" src="icons/google.png"> Entrar com Google
+            </button>
+
+            <button class="google-login-button">
+                <span class="google-login-button-icon"></span>
+                <span class="google-login-button-text">Entrar com Google</span>
             </button>
 
             <p>Nao tem uma conta? <a href="register.html">Inscrever-se</a></p>
