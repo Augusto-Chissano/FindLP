@@ -128,10 +128,15 @@ main {
 }
 
 .button-list li {
-    padding: 0.9rem;
+    padding: 0.2rem;
+    margin-bottom: 10px;
     border-radius: 7px;
 }
 
+.button-list #navigation {
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+}
 .button-list a {
     display: flex;
     align-items: center;
@@ -153,23 +158,24 @@ main {
 .perfil {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
     margin-bottom: 1rem;
     margin-top: 0.6rem;
 }
 
 .perfil img {
-    height: 45px;
+    height: 35px;
 }
 
 .publicar {
-    font-size: 18px;
-    padding: 1rem;
-    color: hsl(252, 75%, 60%);
-    border-radius: 7px;
-    font-weight: 200;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
     cursor: pointer;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 1rem;
 }
 
 .publicar:hover {
@@ -184,7 +190,8 @@ main {
 }
 
 .filtros li span {
-    color: blue;
+    color:HSL(213, 69%, 51%);
+    font-size: 16px;
 }
 
 .filtros li {

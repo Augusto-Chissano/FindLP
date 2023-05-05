@@ -86,7 +86,7 @@ input:hover {
 
 a {
   text-decoration: none;
-  color: #6c63ff;
+  color: HSL(213, 69%, 51%);
 }
 
 #forgot-password {

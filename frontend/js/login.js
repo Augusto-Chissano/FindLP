@@ -35,12 +35,4 @@ passwordInput.addEventListener("click", () => {
     passwordInput.style.borderColor = "#ccc";
 });
 
-function onSignIn(googleUser) {
-    // Obtenha as informações do usuário
-    var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Não confie em IDs de usuário enviados para o seu backend!
-    console.log("Nome: " + profile.getName());
-    console.log("Imagem: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail()); // Este escopo requer a permissão 'email'
-  }
-  
+

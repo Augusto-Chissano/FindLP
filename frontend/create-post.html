@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/create-post.js" defer></script>
+    <link rel="stylesheet" href="css/create-post.css">
+    <title>Crie nova Publicação</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <h2>FindLP</h2>
+            </div>
+            <div class="profile-status">
+                <img src="./icons/messenger.png">
+                <img src="./icons/definicoes.png">
+                <img class="profile-photos" src="./icons/utilizador.png">
+            </div>
+        </div>
+    </nav>
+    <div class="main-container">
+        <aside>
+            <div class="perfil">
+                <img class="profile-photos" src="./icons/utilizador.png">
+                <span>Fulano Beltrano Ciclano</span>
+            </div>
+            <form>
+                <label class="picture">
+                    <input type="file" accept="image/*" class="picture-input">
+                    <span class="picture-image">Selecione uma imagem</span>
+                </label>
+                <input type="text" placeholder="Nome" id="form-name">
+                <input type="number" placeholder="Idade">
+                <select name="genero" id="genero">
+                    <option selected disabled>Gênero</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+                <input type="date" name="" id="">
+                <input type="text" name="" id="" placeholder="Localização ">
+                <textarea name="" id="form-description" cols="30" rows="10" placeholder="Adicione uma descrição "></textarea>
+                <button>Publicar</button>
+            </form>
+        </aside>
+        <main>
+            <div class="preview">
+                <h4>Preview</h4>
+                <div class="post-details">
+                    <div class="img" id="preview-img"></div>
+                    <div class="details">
+                        <div class="post-info">
+                            <div class="preview-name">
+                                <h4>Nome</h4>
+                                <p id="preview-name"></p>
+                            </div>
+                            <div class="preview-description">
+                                <h4>Descrição</h4>
+                                <p id="preview-description">A descrição irá aparecer aqui</p>
+                            </div>
+                            <div class="preview-author">
+                              <h4>Informações do autor</h4> 
+                              <div class="perfil">
+                                <img class="profile-photos" src="./icons/utilizador.png">
+                                <span>Fulano Beltrano Ciclano</span>
+                            </div> 
+                            </div>
+                        </div>
+                        <button id="mensagem">Mensagem</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
