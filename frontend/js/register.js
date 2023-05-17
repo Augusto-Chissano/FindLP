@@ -50,5 +50,5 @@ btnCriarConta.addEventListener("click", (event) => {
 
 btnOk.addEventListener("click", () => {
     card.classList.toggle("hide");
-    return window.location.href = "login.html";
+    return window.location.href = "index.html";
 });

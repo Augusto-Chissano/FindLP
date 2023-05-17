@@ -1,3 +1,11 @@
+const storedObj = localStorage.getItem('user')
+const token = localStorage.getItem('token')
+const user = JSON.parse(storedObj)
+
+const profileName = document.getElementById('profile-name')
+const postPreviewName = document.getElementById('post-preview-name')
+profileName.textContent = `${user.firstName} ${user.lastName}`
+postPreviewName.textContent = `${user.firstName} ${user.lastName}`
 
 const inputFile = document.querySelector('.picture-input')
 const picture = document.querySelector('.picture-image')
@@ -37,7 +45,7 @@ formDescription.addEventListener("keyup", () => {
 })
 
 //Create Post
-const URL = 'http://localhost:3333/posts'
+const requestURL = 'http://localhost:3333/posts'
 const name = document.querySelector('#form-name')
 const gender = document.querySelector('#genero')
 const age = document.querySelector('#form-age')
@@ -47,18 +55,24 @@ const description = document.querySelector('#form-description')
 const image = document.querySelector('#form-image')
 const btnPost = document.querySelector('#btn-post')
 const form = document.querySelector('form')
+const btnOk = document.querySelector(".btn")
+const card = document.querySelector(".card")
+
+
 
 const addPost = async (post) => {
 
-    const response = await fetch(URL, {
+    const response = await fetch(requestURL, {
         method: 'POST',
+        headers: {
+            "x-acces-token": `${token}`
+        },
         body: post
     })
 
     const data = await response.json()
     if(data) {
-        form.reset()
-        console.log(data)
+        card.classList.toggle("hide");
     }
     
 }
@@ -79,3 +93,8 @@ btnPost.addEventListener('click', (event) => {
     addPost(post)
 
 })
+
+btnOk.addEventListener("click", () => {
+    card.classList.toggle("hide");
+    return window.location.href = "home.html";
+});

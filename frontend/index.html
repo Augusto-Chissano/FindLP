@@ -1,287 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ki+l/ZjHhJYEHrCyMyUMdQ2rLjASBzawJh/jp+87F/l+bG0pCJjFV7yvRZhWdX8Jh5n5ISVjZu5dWnM7mudzwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="js/home.js" defer></script>
-    <link rel="stylesheet" href="css/home.css">
-    <title>FindLP</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="js/login.js" defer></script>
+    <title>Login</title>
 </head>
 
 <body>
-    <!--Navbar-->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <h2>FindLP</h2>
-            </div>
-            <div class="search-box">
-                <img src="./icons/lupa.png">
-                <input type="search" placeholder="Procurar">
-            </div>
-            <div class="profile-status">
-                <img src="./icons/messenger.png">
-                <img src="./icons/definicoes.png">
-                <img class="profile-photos" src="./icons/utilizador.png">
-            </div>
-        </div>
-    </nav>
-    <!--Main Section-->
-    <main>
-        <div class="main-container">
-            <div class="side-bar">
-                <div class="perfil">
-                    <img class="profile-photos" src="./icons/utilizador.png">
-                    <span>Fulano Beltrano Ciclano</span>
-                </div>
-                <ul class="button-list">
-                    <li id="navigation" style="background-color: #f2f2f2;">
-                        <a href="#">
-                            <i class="fa fa-home"></i>
-                            <span>Navegue por tudo</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./icons/botao-home (1).png">
-                            <span>Início</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./icons/sino-de-notificacao.png">
-                            <span>Notificações</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./icons/correio-da-caixa-de-entrada.png">
-                            <span>Mensagens</span>
-                        </a>
-                    </li>
-                </ul>
-                <button class="publicar">+ Criar nova publicação</button>
-                <ul class="filtros button-list">
-                    <h2>Filtros</h2>
-                    <li>
-                        <a href="#">
-                            <span>Current Location</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Faixa Etaria</span>
-                        </a>
-                    </li>
-                </ul>
+    <div class="card">
+        <h2>Login</h2>
+        <form>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-            </div>
-            <div class="posts">
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description">
-                        <i class="fas fa-heart" style="color: #fff;"></i>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img id="post-header-options" src="icons/tres-pontos.png">
-                    </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description"></div>
-                </div>
-            </div>
-        </div>
-    </main>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <a href="#" id="forgot-password">Esqueceu a Senha?</a>
 
+            <button type="submit" class="login-btn">Entrar</button>
+
+            <p>ou</p>
+
+            <button type="button" style="display: none;" class="google-btn">
+                <img id="google-icon" src="icons/google.png"> Entrar com Google
+            </button>
+
+            <button class="google-login-button">
+                <span class="google-login-button-icon"></span>
+                <span class="google-login-button-text"></span>Entrar com Google</span>
+            </button>
+
+            <p>Nao tem uma conta? <a href="register.html">Inscrever-se</a></p>
+        </form>
+    </div>
 </body>
 
 </html>

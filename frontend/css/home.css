@@ -239,7 +239,6 @@ main {
     background-color: #ccc;
     background-position: center;
     background-size: cover;
-    background-image: url("http://localhost:3333/uploads/image-1683539039799.png");
     cursor: pointer;
 }
 
