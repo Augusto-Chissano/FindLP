@@ -1,17 +1,16 @@
+const baseURL = 'http://localhost:3333/posts'
 const storedObj = localStorage.getItem('user')
 const token = localStorage.getItem('token')
 const user = JSON.parse(storedObj)
 const divPosts = document.querySelector('.posts')
 
-const baseURL = 'http://localhost:3333/posts'
-
 const profileName = document.getElementById('profile-name')
 profileName.textContent = `${user.firstName} ${user.lastName}`
 
-const publicar = document.querySelector(".publicar");
+const publicar = document.querySelector(".publicar")
 
 publicar.addEventListener("click", () => {
-    window.location.href = "./post-type.html";
+    window.location.href = "./post-type.html"
 })
 
 const getPosts = async () => {
@@ -48,7 +47,7 @@ function renderPost(posts) {
         post.appendChild(postPhoto)
         post.appendChild(postDescription)  
         divPosts.appendChild(post)
-    });
+    })
 }
 
 getPosts()

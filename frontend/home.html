@@ -18,9 +18,12 @@
             <div class="logo">
                 <h2>FindLP</h2>
             </div>
-            <div class="search-box">
-                <img alt="" src="./icons/lupa.png">
-                <input type="search" placeholder="Procurar">
+            <div class="search-container">
+                <input id="searchInput" type="text" placeholder="Pesquisar">
+                <button>
+                    <i class="fas fa-search"></i>
+                    <span>Pesquisar</span>
+                </button>
             </div>
             <div class="profile-status">
                 <img alt src="./icons/messenger.png">
@@ -31,56 +34,51 @@
     </nav>
     <!--Main Section-->
     <main>
-
-        <div class="main-container">
-
+        <div class="wrapper">
             <div class="side-bar">
-
-                <div class="perfil">
-                    <img alt class="profile-photos" src="./icons/utilizador.png">
-                    <span id="profile-name">Fulano Beltrano Ciclano</span>
+                <div class="profile">
+                    <img alt="icone" src="./icons/utilizador.png">
+                    <h2 id="profile-name">Fulano Beltrano</h2>
                 </div>
-                <ul class="button-list">
-                    <li id="navigation" style="background-color: #f2f2f2;">
+                <button class="publicar" id="new-task">+ Nova publicação</button>
+                <ul>
+                    <li>
                         <a href="#">
-                            <i class="fa fa-home"></i>
-                            <span>Navegue por tudo</span>
+                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span class="item">Principal</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./pendenttask.html">
+                            <span class="icon"><i class="far fa-bell"></i></span>
+                            <span class="item">Notificações</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./donetasks.html">
+                            <span class="icon"><i class="fas fa-envelope"></i></span>
+                            <span class="item">Mensagens</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./taskstats.html">
+                            <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                            <span class="item">Estatísticas</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img alt src="./icons/botao-home (1).png">
-                            <span>Início</span>
+                            <span class="icon"><i class="fas fa-cog"></i></span>
+                            <span class="item">Configurações</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <img alt src="./icons/sino-de-notificacao.png">
-                            <span>Notificações</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img alt src="./icons/correio-da-caixa-de-entrada.png">
-                            <span>Mensagens</span>
+                    <li id="logout">
+                        <a href="./index.html" id="logout-a">
+                            <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                            <span class="item">Sair</span>
                         </a>
                     </li>
                 </ul>
-                <button class="publicar">+ Criar nova publicação</button>
-                <ul class="filtros button-list">
-                    <h2>Filtros</h2>
-                    <li>
-                        <a href="#">
-                            <span>Current Location</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Faixa Etaria</span>
-                        </a>
-                    </li>
-                </ul>
-
             </div>
 
             <div class="posts">
@@ -100,7 +98,7 @@
                     <div class="post-description">
                     </div>
                 </div>
-                
+
             </div>
 
         </div>
