@@ -2,19 +2,17 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="Pt-r">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/register.css">
-    <script src="js/register.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/signup.js" defer></script>
     <title>SIGN UP</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="form-image">
-            <img src="assets/img/undraw_shopping_re_hdd9.svg" alt="">
-        </div>
         <div class="form">
             <form  id="form">
                 <div class="form-header">
@@ -22,7 +20,7 @@
                         <h1>Criar Conta</h1>
                     </div>
                     <div class="login-botao">
-                        <button><a href="./login.html">SIGN IN</a></button>
+                        <button><a href="./index.html">Login</a></button>
                     </div>
                 </div>
                 <div class="input-group">
@@ -77,9 +75,10 @@
             </form>
         </div>
     </div>
-    <div class="card hide">
-        <h2 id="mensagem"></h2>
-        <button class="btn">OK</button>
+    <div class="modal-content hide" id="modalContent">
+        <p>O seu cadastro foi realizado com sucesso!</p>
+        <i class="fas fa-check-circle success"></i>
+        <button id="okButton">OK</button>
     </div>      
 </body>
 
