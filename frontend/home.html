@@ -28,7 +28,7 @@
             <div class="profile-status">
                 <img alt src="./icons/messenger.png">
                 <img alt src="./icons/definicoes.png">
-                <img alt class="profile-photos" src="./icons/utilizador.png">
+                <img alt class="profile-photos" src="img/model.jpg">
             </div>
         </div>
     </nav>
@@ -37,7 +37,7 @@
         <div class="wrapper">
             <div class="side-bar">
                 <div class="profile">
-                    <img alt="icone" src="./icons/utilizador.png">
+                    <img alt="icone" src="img/model.jpg">
                     <h2 id="profile-name">Fulano Beltrano</h2>
                 </div>
                 <button class="publicar" id="new-task">+ Nova publicação</button>
@@ -80,27 +80,30 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="posts">
-
-                <div class="post hide">
-                    <div class="post-header">
-                        <div class="post-header-author">
-                            <img alt class="profile-photos" src="./icons/utilizador.png">
-                            <div class="post-header-name">
-                                <span id="name">Beltrano Fulano</span>
-                                <span id="date">13/07/2001</span>
-                            </div>
-                        </div>
-                        <img alt id="post-header-options" src="icons/tres-pontos.png">
+            <div class="post-container">
+                <div class="post-card">
+                    <div class="author">
+                        <img src="img/model.jpg" alt="Imagem do autor">
+                        <span class="author-name">Augusto Chissano</span>
                     </div>
-                    <div class="post-photo"></div>
-                    <div class="post-description">
+                    <div class="post-info">
+                        <span class="post-date">02/06/2023</span>
+                        <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis hic assumenda veniam, reiciendis, dolores quas, sapiente aspernatur voluptas dolorem eligendi qui molestiae eum deleniti perferendis a! Iusto repudiandae nam suscipit.</p>
+                        <img src="img/model.jpg" alt="Imagem da publicação">
+                        <div class="post-actions">
+                            <button title="like" class="like-button">
+                                <i class="fas fa-thumbs-up"></i>
+                            </button>
+                            <button title="comment" class="comment-button">
+                                <i class="fas fa-comment"></i>
+                            </button>
+                            <button title="share" class="share-button">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
     </main>

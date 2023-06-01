@@ -30,7 +30,7 @@ inputFile.addEventListener('change', function(e) {
 
         picture.innerHTML = ""
         picture.appendChild(img)
-    });
+    })
 
     reader.readAsDataURL(file)
 
@@ -72,7 +72,7 @@ const addPost = async (post) => {
 
     const data = await response.json()
     if(data) {
-        card.classList.toggle("hide");
+        card.classList.toggle("hide")
     }
     
 }
@@ -96,5 +96,5 @@ btnPost.addEventListener('click', (event) => {
 
 btnOk.addEventListener("click", () => {
     card.classList.toggle("hide");
-    return window.location.href = "home.html";
-});
+    return window.location.href = "home.html"
+})

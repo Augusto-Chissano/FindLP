@@ -1,26 +1,70 @@
-const baseURL = 'http://localhost:3333/posts'
-const storedObj = localStorage.getItem('user')
+const baseURL = 'http://localhost:3333'
 const token = localStorage.getItem('token')
-const user = JSON.parse(storedObj)
-const divPosts = document.querySelector('.posts')
-
+const user = JSON.parse(localStorage.getItem('user'))
 const profileName = document.getElementById('profile-name')
-profileName.textContent = `${user.firstName} ${user.lastName}`
-
 const publicar = document.querySelector(".publicar")
+
+profileName.textContent = `${user.firstName} ${user.lastName}`
 
 publicar.addEventListener("click", () => {
     window.location.href = "./post-type.html"
 })
 
-const getPosts = async () => {
-
-    let response = await fetch(baseURL)
-    let data = await response.json()
-    renderPost(data) 
+function fetchPosts() {
+    fetch(`${baseURL}/posts`, {
+        headers: {
+            'authorization': token
+        }
+    })
+        .then(response => response.json())
+        .then(posts => {
+            console.log(posts)
+            //renderPosts(tasks)
+        })
+        .catch(error => {
+            console.error('Erro ao buscar postagens:', error)
+        })
 }
 
-//Essa function recebe uma lista proveniente do servidor e exibe cada elemento na pagina
+fetchPosts()
+
+function renderPosts(posts) {
+    const container = document.querySelector('.post-container')
+
+    container.innerHTML = ''
+
+    for (const post of posts) {
+        const card = document.createElement('div')
+        card.classList.add('post-card')
+
+        const author = `${post.owner.firstName} ${post.owner.lasttName}`
+        card.innerHTML = `
+        <div class="author">
+          <img src="../img/model.jpeg" alt="Imagem do autor">
+          <span class="author-name">${author}</span>
+        </div>
+        <div class="post-info">
+          <span class="post-date">${post.date.slice(0,10)}</span>
+          <p class="post-description">${post.description}</p>
+          <img src= "${baseURL}/uploads/${post.image}" alt="Imagem da publicação">
+          <div class="post-actions">
+            <button title="like" class="like-button">
+              <i class="fas fa-thumbs-up"></i>
+            </button>
+            <button title="comment" class="comment-button">
+              <i class="fas fa-comment"></i>
+            </button>
+            <button title="share" class="share-button">
+              <i class="fas fa-share"></i>
+            </button>
+          </div>
+        </div>
+      `
+        container.appendChild(card)
+    }
+}
+
+/*
 function renderPost(posts) {
 
     posts.forEach(element => {
@@ -41,14 +85,13 @@ function renderPost(posts) {
         postDescription.classList = 'post-description'
         post.classList = 'post'
         let image = `http://localhost:3333/uploads/${element.image}`
-        postPhoto.style.backgroundImage = `url(${image})` 
+        postPhoto.style.backgroundImage = `url(${image})`
 
         post.appendChild(postHeader)
         post.appendChild(postPhoto)
-        post.appendChild(postDescription)  
+        post.appendChild(postDescription)
         divPosts.appendChild(post)
     })
 }
-
-getPosts()
+*/
 
