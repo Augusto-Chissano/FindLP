@@ -178,6 +178,11 @@ img {
     border-radius: 5px;
 }
 
+#home {
+    background-color: #fff;
+    border: none;
+}
+
 .wrapper .side-bar ul li a:hover {
     transition: .5s;
     background-color: #fff;
@@ -334,6 +339,8 @@ i {
 
 .post-actions {
     padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;

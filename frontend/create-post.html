@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/create-post.js" defer type="module"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="js/create-post.js" defer></script>
     <link rel="stylesheet" href="css/create-post.css">
     <title>Crie nova Publicação</title>
 </head>
@@ -18,9 +19,9 @@
                 <h2>FindLP</h2>
             </div>
             <div class="profile-status">
-                <img src="./icons/messenger.png">
-                <img src="./icons/definicoes.png">
-                <img class="profile-photos" src="./icons/utilizador.png">
+                <img src="./icons/messenger.png" alt="">
+                <img src="./icons/definicoes.png" alt="">
+                <img class="profile-photos" src="./icons/utilizador.png" alt="">
             </div>
         </div>
     </nav>
@@ -30,7 +31,7 @@
         <aside>
 
             <div class="perfil">
-                <img class="profile-photos" src="./icons/utilizador.png">
+                <img class="profile-photos" src="./icons/utilizador.png" alt="profile">
                 <span id="profile-name">Fulano Beltrano Ciclano</span>
             </div>
 
@@ -41,15 +42,15 @@
                 </label>
                 <input type="text" placeholder="Nome" id="form-name">
                 <input type="number" placeholder="Idade" id="form-age">
-                <select name="genero" id="genero">
+                <select title="gender" name="genero" id="genero">
                     <option selected disabled>Gênero</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Masculino">Masculino</option>
                 </select>
-                <input type="date" name="" id="form-date">
+                <input title="date" type="date" name="" id="form-date">
                 <input type="text" name="" id="form-location" placeholder="Localização ">
                 <textarea name="" id="form-description" cols="30" rows="10" placeholder="Adicione uma descrição "></textarea>
-                <button id="btn-post">Publicar</button>
+                <button type="button" id="btn-post">Publicar</button>
             </form>
 
         </aside>
@@ -73,7 +74,7 @@
                             <div class="preview-author">
                               <h4>Informações do autor</h4> 
                               <div class="perfil">
-                                <img class="profile-photos" src="./icons/utilizador.png">
+                                <img class="profile-photos" src="./icons/utilizador.png" alt="">
                                 <span id="post-preview-name">Fulano Beltrano Ciclano</span>
                             </div> 
                             </div>
@@ -87,9 +88,10 @@
 
     </div>
 
-    <div class="card hide">
-        <h2 id="mensagem">Publicado</h2>
-        <button class="btn">OK</button>
+    <div class="modal-content hide" id="modalContent">
+        <p>Publicação realizada com sucesso!</p>
+        <i class="fas fa-check-circle success"></i>
+        <button id="okButton">OK</button>
     </div> 
 
 </body>

@@ -1,11 +1,15 @@
-const storedObj = localStorage.getItem('user')
+
+const baseURL = 'http://localhost:3333'
 const token = localStorage.getItem('token')
-const user = JSON.parse(storedObj)
+const user = JSON.parse(localStorage.getItem('user'))
+const modalContent = document.getElementById('modalContent')
+const okButton = document.getElementById('okButton')
 
 const profileName = document.getElementById('profile-name')
 const postPreviewName = document.getElementById('post-preview-name')
 profileName.textContent = `${user.firstName} ${user.lastName}`
 postPreviewName.textContent = `${user.firstName} ${user.lastName}`
+
 
 const inputFile = document.querySelector('.picture-input')
 const picture = document.querySelector('.picture-image')
@@ -16,12 +20,12 @@ const formDescription = document.querySelector('#form-description')
 const previewDescription = document.querySelector('#preview-description')
 
 //Preview Post
-inputFile.addEventListener('change', function(e) {
-    
+inputFile.addEventListener('change', function (e) {
+
     const inputTarget = e.target
     const file = inputTarget.files[0]
     const reader = new FileReader()
-    reader.addEventListener("load", function(e) {
+    reader.addEventListener("load", function (e) {
         const readerTarget = e.target
         const img = document.createElement('img')
         img.src = reader.result
@@ -37,64 +41,95 @@ inputFile.addEventListener('change', function(e) {
 })
 
 formName.addEventListener("keyup", () => {
-    previewName.innerHTML = formName.value 
+    previewName.innerHTML = formName.value
 })
 
 formDescription.addEventListener("keyup", () => {
-    previewDescription.innerHTML = formDescription.value 
+    previewDescription.innerHTML = formDescription.value
 })
 
-//Create Post
-const requestURL = 'http://localhost:3333/posts'
-const name = document.querySelector('#form-name')
+
+const nameInput = document.querySelector('#form-name')
 const gender = document.querySelector('#genero')
 const age = document.querySelector('#form-age')
 const date = document.querySelector('#form-date')
-const location = document.querySelector('#form-location')
+const locationInput = document.querySelector('#form-location')
 const description = document.querySelector('#form-description')
 const image = document.querySelector('#form-image')
 const btnPost = document.querySelector('#btn-post')
 const form = document.querySelector('form')
-const btnOk = document.querySelector(".btn")
-const card = document.querySelector(".card")
-
-
 
 const addPost = async (post) => {
 
-    const response = await fetch(requestURL, {
-        method: 'POST',
-        headers: {
-            "x-acces-token": `${token}`
-        },
-        body: post
-    })
+    try {
 
-    const data = await response.json()
-    if(data) {
-        card.classList.toggle("hide")
+        const response = await fetch(`${baseURL}/posts`, {
+            method: 'POST',
+            headers: {
+                "authorization": `${token}`
+            },
+            body: post
+        })
+
+        if (response.ok) {
+            const data = await response.json()
+            if (data) {
+                form.reset()
+                modalContent.classList.toggle('hide')
+            }
+
+        } else {
+            const data = await response.json()
+            console.log(data.error);
+            throw new Error('Erro ao publicar')
+        }
+
+    } catch (error) {
+        console.error('Erro ao publicar:', error)
+        throw new Error('Erro ao publicar o post')
     }
-    
+
 }
 
-btnPost.addEventListener('click', (event) => {
+const handleAddPost = async () => {
 
+    const post = new FormData()
+    post.append('name', nameInput.value)
+    post.append('age', age.value)
+    post.append('gender', gender.value)
+    post.append('date', date.value)
+    post.append('location', locationInput.value)
+    post.append('description', description.value)
+    post.append('image', image.files[0])
+
+    try {
+        const data = await addPost(post)
+        form.reset()
+        if (data) {
+            return window.location.href = 'home.html'
+            // modalContent.classList.toggle('hide')
+        }
+    } catch (error) {
+        console.error('Erro na publicacao:', error)
+    }
+}
+
+btnPost.addEventListener('click', async (event) => {
     event.preventDefault()
-    //Criando uma instancia de FormData, para envio de arquivos para o servidor
-    const post = new FormData();
-    post.append('name' , name.value)
-    post.append('age' , age.value)
-    post.append('gender' , gender.value)
-    post.append('date' , date.value)
-    post.append('location' , location.value)
-    post.append('description' , description.value)
-    post.append('image' , image.files[0])
+    const post = new FormData()
+    post.append('name', nameInput.value)
+    post.append('age', age.value)
+    post.append('gender', gender.value)
+    post.append('date', date.value)
+    post.append('location', locationInput.value)
+    post.append('description', description.value)
+    post.append('image', image.files[0])
 
-    addPost(post)
+    await addPost(post)
 
 })
 
-btnOk.addEventListener("click", () => {
-    card.classList.toggle("hide");
-    return window.location.href = "home.html"
+
+okButton.addEventListener('click', (event) => { 
+    return window.location.href = 'home.html'
 })

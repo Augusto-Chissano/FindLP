@@ -251,9 +251,7 @@ body {
     background-color: #3e8e41;
 }
 
-/*
-*Mensagem de confirmacao
-*/
+
 .modal-content {
     display: flex;
     flex-direction: column;
